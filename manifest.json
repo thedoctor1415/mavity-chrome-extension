@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Gravity to Mavity",
+  "version": "1.0",
+  "description": "Replaces 'gravity' and related terms with 'mavity' on active web pages.",
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Replaces gravity and related terms"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
